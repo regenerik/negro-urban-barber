@@ -1,5 +1,5 @@
 export default function Home() {
-  const instagramUrl = "https://instagram.com/NEGRO.barber";
+  const instagramUrl = "https://instagram.com/negrourbanbarber.ok";
 
   return (
     <div className="w-full max-w-xl mx-auto text-center px-6 mt-3">

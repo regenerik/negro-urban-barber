@@ -1,5 +1,5 @@
 export default function Amigos() {
-  const instagramUrl = "https://instagram.com/NEGRO.barber";
+  const instagramUrl = "https://instagram.com/negrourbanbarber.ok";
   const subtitle = "A los amigos hay que tenerlos cerca. Te queremos con nosotros…";
 
   return (

@@ -1,5 +1,5 @@
 export default function Vecinos() {
-  const instagramUrl = "https://instagram.com/NEGRO.barber";
+  const instagramUrl = "https://instagram.com/negrourbanbarber.ok";
   const subtitle = "Los vecinos estamos para darnos una mano siempre… contá con nosotros.";
 
   return (

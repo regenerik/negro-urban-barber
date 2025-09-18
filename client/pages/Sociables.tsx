@@ -1,5 +1,5 @@
 export default function Sociables() {
-  const instagramUrl = "https://instagram.com/NEGRO.barber";
+  const instagramUrl = "https://instagram.com/negrourbanbarber.ok";
   const subtitle = "Personas como vos, son el tipo de personas que queremos siempre en nuestro lugar… sentite bienvenid@.";
 
   return (
