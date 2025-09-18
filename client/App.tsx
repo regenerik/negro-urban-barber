@@ -8,7 +8,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Root from "./routes/Root";
-import Landing from "./pages/Landing";
+import Home from "./pages/Home";
+import Amigos from "./pages/Amigos";
+import Vecinos from "./pages/Vecinos";
+import Sociables from "./pages/Sociables";
 
 const queryClient = new QueryClient();
 
@@ -20,10 +23,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route element={<Root />}>
-            <Route index element={<Navigate to="/amigos" replace />} />
-            <Route path="/amigos" element={<Landing subtitle="A los amigos hay que tenerlos cerca. Te queremos con nosotros…" />} />
-            <Route path="/vecinos" element={<Landing subtitle="Los vecinos estamos para darnos una mano siempre… contá con nosotros." />} />
-            <Route path="/sociables" element={<Landing subtitle="Personas como vos, son el tipo de personas que queremos siempre en nuestro lugar… sentite bienvenid@." />} />
+            <Route index element={<Home />} />
+            <Route path="/amigos" element={<Amigos />} />
+            <Route path="/vecinos" element={<Vecinos />} />
+            <Route path="/sociables" element={<Sociables />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
