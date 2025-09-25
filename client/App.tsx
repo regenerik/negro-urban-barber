@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Amigos from "./pages/Amigos";
 import Vecinos from "./pages/Vecinos";
 import Sociables from "./pages/Sociables";
+import TestWebSocket from "./pages/TestWebSocket.tsx";
 import { SocketProvider } from "./lib/SocketContext.jsx"; // O la ruta donde lo hayas guardado
 
 const queryClient = new QueryClient();
@@ -26,12 +27,13 @@ const App = () => (
         <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Routes>
             <Route element={<Root />}>
-            <Route index element={<Home />} />
-            <Route path="/amigos" element={<Amigos />} />
-            <Route path="/vecinos" element={<Vecinos />} />
-            <Route path="/sociables" element={<Sociables />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
+              <Route index element={<Home />} />
+              <Route path="/amigos" element={<Amigos />} />
+              <Route path="/vecinos" element={<Vecinos />} />
+              <Route path="/sociables" element={<Sociables />} />
+            </Route>
+              <Route path="/test-websocket" element={<TestWebSocket />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </SocketProvider>
