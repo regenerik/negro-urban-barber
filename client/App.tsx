@@ -23,7 +23,7 @@ const App = () => (
       <Sonner />
       {/* Aquí es donde envuelves tu aplicación con el SocketProvider */}
       <SocketProvider>
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Routes>
             <Route element={<Root />}>
             <Route index element={<Home />} />
