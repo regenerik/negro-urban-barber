@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <div className="w-full max-w-xl mx-auto text-center px-6 mt-3">
       <div className="mt-6">
+        
         <a
           href={instagramUrl}
           target="_blank"
