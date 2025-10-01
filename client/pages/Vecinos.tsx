@@ -1,5 +1,5 @@
 import React from 'react';
-import backImage from "../imgs/back_low.png";
+import backImage from "../imgs/back_lower.png";
 import logoImage from "../imgs/marca_blanco_sin_fondo.png";
 
 export default function Vecinos() {
