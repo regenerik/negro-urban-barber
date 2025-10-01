@@ -31,11 +31,13 @@ const App = () => (
           <Routes>
             <Route element={<Root />}>
 
-              <Route path="/amigos" element={<Amigos />} />
-              <Route path="/vecinos" element={<Vecinos />} />
+
+
               <Route path="/sociables" element={<Sociables />} />
             </Route>
+              <Route path="/amigos" element={<Amigos />} />
               <Route index element={<Home />} />
+              <Route path="/vecinos" element={<Vecinos />} />
               <Route path="/test-websocket" element={<TestWebSocket />} />
               <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />
