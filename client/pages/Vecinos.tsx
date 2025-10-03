@@ -1,28 +1,46 @@
-import React from 'react';
+import React, { useState } from "react";
 import backImage from "../imgs/back_lower.png";
 import logoImage from "../imgs/marca_blanco_sin_fondo.png";
 
 export default function Vecinos() {
+  const [bgLoaded, setBgLoaded] = useState(false);
   const instagramUrl = "https://instagram.com/negrourbanbarber.ok";
-  const subtitle ="Los vecinos estamos para darnos una mano. Contá con nosotros.";
-  return (
-    <div className="w-full max-w-xl mx-auto px-6 mt-6 relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900/90 border border-gray-800/50">
-      
-      {/* Fondo con opacidad */}
-      <div
-        className="absolute inset-0 bg-center bg-cover opacity-20"
-        style={{ backgroundImage: `url(${backImage})` }}
-      ></div>
+  const subtitle = "Los vecinos estamos para darnos una mano. Contá con nosotros.";
 
-      {/* Contenido sobre el fondo */}
+  return (
+    <div
+      className="
+        w-full max-w-xl mx-auto px-6 mt-6 relative rounded-3xl overflow-hidden
+        shadow-2xl bg-gray-900/90 border border-gray-800/50
+        min-h-[520px] sm:min-h-[560px]   /* ← altura predefinida para evitar saltos */
+      "
+    >
+      {/* Fondo como <img> para poder hacer fade-in */}
+      <img
+        src={backImage}
+        alt=""
+        aria-hidden="true"
+        onLoad={() => setBgLoaded(true)}
+        className={
+          "absolute inset-0 w-full h-full object-cover " +
+          "transition-opacity duration-1000 ease-out will-change-[opacity] " +
+          (bgLoaded ? "opacity-20" : "opacity-0") /* ← fade de 0 → 0.2 en 1s */
+        }
+      />
+
+      {/* Capa de seguridad por si no carga el fondo */}
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.25),rgba(0,0,0,0.25))] pointer-events-none" />
+
+      {/* Contenido */}
       <div className="relative text-center py-10 px-4">
-        
-        {/* LOGO: Centrado, arriba de todo el texto */}
-        <div className="mb-8 pt-4"> 
-          <img 
-            src={logoImage} 
+        {/* LOGO (le fijo medidas para cero salto) */}
+        <div className="mb-8 pt-4">
+          <img
+            src={logoImage}
             alt="Logo Negro Urban Barber"
-            className="w-48 sm:w-56 h-auto mx-auto object-contain drop-shadow-md" 
+            width={224}  /* ~ w-56 */
+            height={80}  /* estimado para reservar espacio; ajustá si querés */
+            className="w-48 sm:w-56 h-auto mx-auto object-contain drop-shadow-md"
             loading="lazy"
           />
         </div>
@@ -31,10 +49,10 @@ export default function Vecinos() {
         <p className="leading-relaxed text-white text-lg sm:text-xl font-semibold tracking-wide [font-family:'Inter',sans-serif]">
           {subtitle}
         </p>
-        
+
         <br />
-        
-        {/* Texto de información */}
+
+        {/* Texto info */}
         <span className="text-white/80 font-light text-base">
           Tu nuevo local en Palermo está llegando en Noviembre.
         </span>
@@ -42,7 +60,7 @@ export default function Vecinos() {
         <br />
         <br />
 
-        {/* Botón de Instagram */}
+        {/* Botón Instagram */}
         <div className="mt-8 pb-4">
           <a
             href={instagramUrl}
